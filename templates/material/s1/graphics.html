@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester 1 - Engineering Graphics EST110</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        header {
+            width: 100%;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #0055A4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .pdf-card {
+    background: url("{{ url_for('static', filename='book.jpg') }}") no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire card */
+    background-color: white;
+    border-radius: 12px;
+    margin: 15px;
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+        .pdf-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .pdf-card h3 {
+            margin: 0 0 15px;
+            font-size: 20px;
+            color: #0055A4;
+        }
+
+        .pdf-card a {
+            text-decoration: none;
+            color: white;
+            background-color: #003366;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px 0;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .pdf-card a:hover {
+            background-color: #0055A4;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .pdf-card {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                padding: 15px;
+            }
+
+            .pdf-card h3 {
+                font-size: 18px;
+            }
+
+            .pdf-card a {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Semester 1 - Engineering Graphics EST110</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('material_page') }}">Study Material</a></li>
+            <li><a href="{{ url_for('chat_page') }}">Chat with AI</a></li>
+            <li><a href="{{ url_for('previous_questions_page') }}">Previous Question Papers</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="pdf-card">
+            <h3>Syllabus</h3>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Engineering Graphics Syllabus - Kerala Notes.pdf') }}" download>Download Syllabus</a>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Engineering Graphics Syllabus - Kerala Notes.pdf') }}" target="_blank">Open Syllabus</a>
+        </div>
+        <div class="pdf-card">
+            <h3>Module 1</h3>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 1 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" download>Download Module 1</a>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 1 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" target="_blank">Open Module 1</a>
+        </div>
+        <div class="pdf-card">
+            <h3>Module 2</h3>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 2 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" download>Download Module 2</a>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 2 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" target="_blank">Open Module 2</a>
+        </div>
+        <div class="pdf-card">
+            <h3>Module 3</h3>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 3 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" download>Download Module 3</a>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 3 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" target="_blank">Open Module 3</a>
+        </div>
+        <div class="pdf-card">
+            <h3>Module 4</h3>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 4 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" download>Download Module 4</a>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 4 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" target="_blank">Open Module 4</a>
+        </div>
+        <div class="pdf-card">
+            <h3>Module 5</h3>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 5 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" download>Download Module 5</a>
+            <a href="{{ url_for('s1_engineering_graphics_pdf', filename='Mod 5 Engineering Graphics PPT Notes - Kerala Notes.pdf') }}" target="_blank">Open Module 5</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 KTU IT Chatbot. All rights reserved.</p>
+    </footer>
+</body>
+</html>

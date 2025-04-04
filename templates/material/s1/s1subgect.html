@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester 1 - SUBJECTS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #0055A4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: #003366;
+        }
+
+        .subject {
+            background-color: white;
+            border-radius: 12px;
+            margin: 15px 0;
+            padding: 25px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .subject:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .subject a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .subject h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #0055A4;
+        }
+
+        .subject p {
+            margin: 10px 0 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .subject {
+                padding: 20px;
+            }
+
+            .subject h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="KTU Logo" class="logo">
+        <h1 style="color: white;">Semester 1 - KTU IT CHATBOT</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('material_page') }}">Study Material</a></li>
+            <li><a href="{{ url_for('chat_page') }}">Chat with AI</a></li>
+            <li><a href="{{ url_for('previous_questions_page') }}">Previous Question Papers</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h2>Select Your Subject</h2>
+        <div class="subject">
+            <a href="{{ url_for('s1_maths') }}">
+                <h3>Linear Algebra And Calculus - MAT101</h3>
+                <p>Explore study materials for Linear Algebra and Calculus.</p>
+            </a>
+        </div>
+        <div class="subject">
+            <a href="{{ url_for('s1_physics') }}">
+                <h3>Engineering Physics A - PHT100</h3>
+                <p>Access resources for Engineering Physics A.</p>
+            </a>
+        </div>
+        <div class="subject">
+            <a href="{{ url_for('s1_graphics') }}">
+                <h3>Engineering Graphics - EST110</h3>
+                <p>Learn and practice Engineering Graphics.</p>
+            </a>
+        </div>
+        <div class="subject">
+            <a href="{{ url_for('s1_civil_mech') }}">
+                <h3>Basics Of Civil & Mechanical Engineering - EST120</h3>
+                <p>Study materials for Civil and Mechanical Engineering basics.</p>
+            </a>
+        </div>
+        <div class="subject">
+            <a href="{{ url_for('s1_lifeskills') }}">
+                <h3>Life Skills - HUN101</h3>
+                <p>Enhance your life skills with curated resources.</p>
+            </a>
+        </div>
+    </main>
+     <footer>
+        <p>&copy; 2025 KTU IT Chatbot. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
