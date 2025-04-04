@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Material - KTU IT Chatbot</title>
+    <style>
+         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        header {
+            width: 100%;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1{
+            color: white;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #0055A4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: #003366;
+        }
+
+        .year {
+            background-color: white;
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .year:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .semester {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .semester:hover {
+            background-color: #e0f7fa;
+        }
+
+        .semester a {
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .semester h4 {
+            margin: 0;
+            font-size: 20px;
+            color: #0055A4;
+        }
+
+        .semester p {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="static/logo.jpg" alt="KTU Logo" class="logo">
+        <h1>KTU IT CHATBOT</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('material_page') }}">Study Material</a></li>
+            <li><a href="{{ url_for('chat_page') }}">Chat with AI</a></li>
+            <li><a href="{{ url_for('previous_questions_page') }}">Previous Question Papers</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Study Material</h2>
+        <div class="year" id="first-year">
+            <h3>First Year</h3>
+            <div class="semester">
+                <a href="{{ url_for('s1_subject') }}">
+                    <h4>Semester 1</h4>
+                    <p>Content for Semester 1</p>
+                </a>
+            </div>
+            <div class="semester">
+                <a href="{{ url_for('s2') }}">
+                    <h4>Semester 2</h4>
+                    <p>Content for Semester 2</p>
+                </a>
+            </div>
+        </div>
+        <div class="year" id="second-year">
+            <h3>Second Year</h3>
+            <div class="semester">
+                <a href="{{ url_for('s3') }}">
+                    <h4>Semester 3</h4>
+                    <p>Content for Semester 3</p>
+                </a>
+            </div>
+            <div class="semester">
+                <a href="{{ url_for('s4') }}">
+                    <h4>Semester 4</h4>
+                    <p>Content for Semester 4</p>
+                </a>
+            </div>
+        </div>
+        <div class="year" id="third-year">
+            <h3>Third Year</h3>
+            <div class="semester">
+                <a href="{{ url_for('s5') }}">
+                    <h4>Semester 5</h4>
+                    <p>Content for Semester 5</p>
+                </a>
+            </div>
+            <div class="semester">
+                <a href="{{ url_for('s6') }}">
+                    <h4>Semester 6</h4>
+                    <p>Content for Semester 6</p>
+                </a>
+            </div>
+        </div>
+        <div class="year" id="final-year">
+            <h3>Final Year</h3>
+            <div class="semester">
+                <a href="{{ url_for('s7') }}">
+                    <h4>Semester 7</h4>
+                    <p>Content for Semester 7</p>
+                </a>
+            </div>
+            <div class="semester">
+                <a href="{{ url_for('s8') }}">
+                    <h4>Semester 8</h4>
+                    <p>Content for Semester 8</p>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 KTU IT CHATBOT PROJECT</p>
+    </footer>
+    
+</body>
+</html>
